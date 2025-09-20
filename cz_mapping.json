@@ -1,0 +1,45 @@
+{
+  "cz_CZPTT.zip": {
+    "prefix": 0,
+    "download_url": "https://data.jr.ggu.cz/results/latest/CZPTT_GTFS.zip",
+    "gtfs_rt": [
+      "https://owncloud.cesnet.cz/index.php/s/DQdSPwh0bJjtEWq/download"
+    ]
+  },
+  "cz_DPMO.zip": {
+    "prefix": 1,
+    "download_url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+    "gtfs_rt": null
+  },
+  "cz_IDS-JMK.zip": {
+    "prefix": 2,
+    "download_url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+    "gtfs_rt": [
+      "https://content.idsjmk.cz/kestazeni/gtfsReal.dat"
+    ]
+  },
+  "cz_IDZK.zip": {
+    "prefix": 3,
+    "download_url": "https://dataportal-files.bileto.net/id-zk-all.zip",
+    "gtfs_rt": [
+      "https://owncloud.cesnet.cz/index.php/s/249lP7QKA8CR2PY/download"
+    ]
+  },
+  "cz_JDF-merged.zip": {
+    "prefix": 4,
+    "download_url": "https://github.com/KoblizekXD/gtfs-processor/raw/refs/heads/gtfs/files/latest.zip",
+    "gtfs_rt": null
+  },
+  "cz_PID.zip": {
+    "prefix": 5,
+    "download_url": "http://data.pid.cz/PID_GTFS.zip",
+    "gtfs_rt": [
+      "https://api.golemio.cz/v2/vehiclepositions/gtfsrt/trip_updates.pb"
+    ]
+  },
+  "cz_PMDP.zip": {
+    "prefix": 6,
+    "download_url": "https://jizdnirady.pmdp.cz/jr/gtfs",
+    "gtfs_rt": null
+  }
+}
