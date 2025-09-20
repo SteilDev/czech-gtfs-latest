@@ -27,7 +27,7 @@ jobs:
         run: pip install bs4
 
       - name: Download latest GTFS feeds
-        run: python download_gtfs.py
+        run: python download_gtfs.py --prefix cz
 
       - name: Set up Go
         uses: actions/setup-go@v4
