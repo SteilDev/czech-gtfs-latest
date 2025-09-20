@@ -41,7 +41,7 @@ jobs:
         run: |
           export PATH=$PATH:$HOME/go/bin
           for g in cz_*.zip; do
-            gtfstidy "$g" --fix-zip --remove-red-services --drop-shapes --delete-orphans --output "$g"
+            gtfstidy "$g" --fix --fix-zip --remove-red-services --keep-ids --remove-fillers --drop-shapes --delete-orphans --output "$g"
           done > tidy.log
           gtfstidy -E --drop-shapes --keep-ids -AC cz_*.zip -o gtfs_czech_clean.zip --fix --remove-fillers >> tidy.log
 
