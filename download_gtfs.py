@@ -16,28 +16,29 @@ def download_file(url, filename):
             f.write(chunk)
 
 def main():
-    # Step 1: Download JSON
-    print(f"Fetching {JSON_URL} ...")
-    response = requests.get(JSON_URL)
-    response.raise_for_status()
-    data = response.json()
+    if os.path.exists("cz.json"):
+        print("Loading local cz.json ...")
+        with open("cz.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:
+        print(f"Fetching {JSON_URL} ...")
+        response = requests.get(JSON_URL)
+        response.raise_for_status()
+        data = response.json()
 
     sources = data.get("sources", [])
-    
-    # Step 2: Collect static GTFS feeds
+
     http_feeds = [s for s in sources if s.get("type") == "http" and "url" in s]
     http_feeds_sorted = sorted(http_feeds, key=lambda s: f"cz_{s['name']}.zip")
 
     mapping = {}
 
-    # Step 3: Loop and download
     for idx, src in enumerate(http_feeds_sorted):
         name = src["name"]
         filename = f"cz_{name}.zip"
         prefix = idx
         url = src["url"]
 
-        # collect GTFS-RT feeds for this source
         rt_feeds = [
             s["url"]
             for s in sources
@@ -50,13 +51,11 @@ def main():
             "gtfs_rt": rt_feeds if rt_feeds else None
         }
 
-        # Download GTFS file if not already present
         if not os.path.exists(filename):
             download_file(url, filename)
         else:
             print(f"Skipping {filename}, already exists")
 
-    # Step 4: Save mapping file
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(mapping, f, indent=2, ensure_ascii=False)
 
@@ -65,4 +64,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

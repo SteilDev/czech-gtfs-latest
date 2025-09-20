@@ -1,0 +1,63 @@
+{
+  "sources": [
+    {
+      "name": "CZPTT",
+      "type": "http",
+      "url": "https://data.jr.ggu.cz/results/latest/CZPTT_GTFS.zip"
+    },
+    {
+      "name": "CZPTT",
+      "type": "url",
+      "spec": "gtfs-rt",
+      "url": "https://owncloud.cesnet.cz/index.php/s/DQdSPwh0bJjtEWq/download"
+    },
+    {
+      "name": "PID",
+      "type": "http",
+      "url": "http://data.pid.cz/PID_GTFS.zip"
+    },
+    {
+      "name": "PID",
+      "type": "url",
+      "spec": "gtfs-rt",
+      "url": "https://api.golemio.cz/v2/vehiclepositions/gtfsrt/trip_updates.pb"
+    },
+    {
+      "name": "IDS-JMK",
+      "type": "http",
+      "url": "https://kordis-jmk.cz/gtfs/gtfs.zip"
+    },
+    {
+      "name": "IDS-JMK",
+      "type": "url",
+      "spec": "gtfs-rt",
+      "url": "https://content.idsjmk.cz/kestazeni/gtfsReal.dat"
+    },
+    {
+      "name": "DPMO",
+      "type": "http",
+      "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip"
+    },
+    {
+      "name": "PMDP",
+      "type": "http",
+      "url": "https://jizdnirady.pmdp.cz/jr/gtfs"
+    },
+    {
+      "name": "IDZK",
+      "type": "http",
+      "url": "https://dataportal-files.bileto.net/id-zk-all.zip"
+    },
+    {
+      "name": "JDF-merged",
+      "type": "http",
+      "url": "https://github.com/KoblizekXD/gtfs-processor/raw/refs/heads/gtfs/files/latest.zip"
+    },
+    {
+      "name": "IDZK",
+      "type": "url",
+      "spec": "gtfs-rt",
+      "url": "https://owncloud.cesnet.cz/index.php/s/249lP7QKA8CR2PY/download"
+    }
+  ]
+}
