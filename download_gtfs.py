@@ -1,45 +1,67 @@
 #!/usr/bin/env python3
-import argparse
-import os
 import requests
-from bs4 import BeautifulSoup
+import json
+import os
 
-BASE_URL = "https://api.transitous.org/gtfs/"
+JSON_URL = "https://raw.githubusercontent.com/public-transport/transitous/refs/heads/main/feeds/cz.json"
+OUTPUT_FILE = "cz_mapping.json"
+
+def download_file(url, filename):
+    """Download file from url to filename"""
+    print(f"Downloading {filename} from {url}")
+    r = requests.get(url, stream=True)
+    r.raise_for_status()
+    with open(filename, "wb") as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
 
 def main():
-    parser = argparse.ArgumentParser(description="Download GTFS files from Transitous API with optional prefix filter.")
-    parser.add_argument("--prefix", type=str, required=True, help="Prefix to filter files (e.g., 'X' downloads 'X_*').")
-    args = parser.parse_args()
-
-    # Get directory listing (HTML)
-    response = requests.get(BASE_URL)
+    # Step 1: Download JSON
+    print(f"Fetching {JSON_URL} ...")
+    response = requests.get(JSON_URL)
     response.raise_for_status()
-    soup = BeautifulSoup(response.text, "html.parser")
+    data = response.json()
 
-    # Extract all links ending in .zip
-    files = [a["href"] for a in soup.find_all("a", href=True) if a["href"].endswith(".zip")]
+    sources = data.get("sources", [])
+    
+    # Step 2: Collect static GTFS feeds
+    http_feeds = [s for s in sources if s.get("type") == "http" and "url" in s]
+    http_feeds_sorted = sorted(http_feeds, key=lambda s: f"cz_{s['name']}.zip")
 
-    # Filter files based on prefix
-    prefix = args.prefix
-    if prefix:
-        files = [f for f in files if f.startswith(f"{prefix}_")]
+    mapping = {}
 
-    if not files:
-        print(f"No files found with prefix '{prefix}_'")
-        return
+    # Step 3: Loop and download
+    for idx, src in enumerate(http_feeds_sorted):
+        name = src["name"]
+        filename = f"cz_{name}.zip"
+        prefix = idx
+        url = src["url"]
 
-    print(f"Found {len(files)} files. Downloading...")
+        # collect GTFS-RT feeds for this source
+        rt_feeds = [
+            s["url"]
+            for s in sources
+            if s.get("type") == "url" and s.get("spec") == "gtfs-rt" and s.get("name") == name
+        ]
 
-    for filename in files:
-        url = BASE_URL + filename
-        print(f"Downloading {filename} ...")
-        r = requests.get(url, stream=True)
-        r.raise_for_status()
-        with open(filename, "wb") as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                f.write(chunk)
+        mapping[filename] = {
+            "prefix": prefix,
+            "download_url": url,
+            "gtfs_rt": rt_feeds if rt_feeds else None
+        }
 
-    print("Download completed.")
+        # Download GTFS file if not already present
+        if not os.path.exists(filename):
+            download_file(url, filename)
+        else:
+            print(f"Skipping {filename}, already exists")
+
+    # Step 4: Save mapping file
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(mapping, f, indent=2, ensure_ascii=False)
+
+    print(f"\nDownloaded {len(http_feeds_sorted)} GTFS feeds")
+    print(f"Mapping saved to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
