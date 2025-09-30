@@ -5,7 +5,7 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 /6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         run: |
           git clone https://github.com/patrickbr/gtfstidy.git
           cd gtfstidy
-          go build -o gtfstidy .
+          make build
 
       - name: Add gtfstidy to PATH
         run: echo "${{ github.workspace }}/gtfstidy" >> $GITHUB_PATH
