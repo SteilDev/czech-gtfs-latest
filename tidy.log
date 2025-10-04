@@ -34,6 +34,6 @@ Parsing GTFS feed in 'cz_JDF-merged.zip' ... done. (0 trips [0.00%], 0 stop time
 Parsing GTFS feed in 'cz_PID.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Parsing GTFS feed in 'cz_PMDP.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Removing redundant agencies... done. (-84 agencies [-23.53%])
-Reclustering stops... done. (-11743 clusters) [-22.66%]
+Reclustering stops... done. (-11744 clusters) [-22.67%]
 Removing service duplicates... done. (-1262 services [-5.44%])
 Outputting GTFS feed to 'gtfs_czech_clean.zip'... done.
