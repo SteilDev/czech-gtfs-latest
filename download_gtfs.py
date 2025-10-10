@@ -45,16 +45,20 @@ def main():
             if s.get("type") == "url" and s.get("spec") == "gtfs-rt" and s.get("name") == name
         ]
 
+        if not os.path.exists(filename):
+            try:
+                download_file(url, filename)
+            except Exception as e:
+                print(f"  Failed to process {filename}: {url}\n")
+                continue
+        else:
+            print(f"Skipping {filename}, already exists")
+
         mapping[filename] = {
             "prefix": prefix,
             "download_url": url,
             "gtfs_rt": rt_feeds if rt_feeds else None
         }
-
-        if not os.path.exists(filename):
-            download_file(url, filename)
-        else:
-            print(f"Skipping {filename}, already exists")
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(mapping, f, indent=2, ensure_ascii=False)
