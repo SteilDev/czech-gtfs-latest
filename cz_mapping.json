@@ -1,11 +1,4 @@
 {
-  "cz_CZPTT.zip": {
-    "prefix": 0,
-    "download_url": "https://data.jr.ggu.cz/results/latest/CZPTT_GTFS.zip",
-    "gtfs_rt": [
-      "https://owncloud.cesnet.cz/index.php/s/DQdSPwh0bJjtEWq/download"
-    ]
-  },
   "cz_DPMO.zip": {
     "prefix": 1,
     "download_url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
