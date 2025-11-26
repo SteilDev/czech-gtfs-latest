@@ -36,21 +36,21 @@ Outputting GTFS feed to 'cz_IDZK.gtfs.zip'... done.
 Parsing GTFS feed in 'cz_JDF-merged.gtfs.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Removing trips travelling too fast...done. (-1 trips [-0.00%])
 Removing unreferenced entries... done. (-0 trips [-0.00%], -11756 stops [-31.73%], -0 shapes [-0.00%], -2726 services [-55.99%], -5055 routes [-59.28%], -217 agencies [-43.75%], -0 transfers [-0.00%])
-Reclustering stops... done. (-492 clusters) [-1.94%]
+Reclustering stops... done. (-491 clusters) [-1.94%]
 Removing service duplicates... done. (-1262 services [-58.89%])
 Minimizing ids... done.
 Outputting GTFS feed to 'cz_JDF-merged.gtfs.zip'... done.
 Parsing GTFS feed in 'cz_PID.gtfs.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Removing trips travelling too fast...done. (-0 trips [-0.00%])
 Removing unreferenced entries... done. (-0 trips [-0.00%], -228 stops [-1.22%], -0 shapes [-0.00%], -9 services [-1.86%], -1 routes [-0.12%], -0 agencies [-0.00%], -0 transfers [-0.00%])
-Reclustering stops... done. (-8036 clusters) [-47.03%]
+Reclustering stops... done. (-8027 clusters) [-46.98%]
 Removing service duplicates... done. (-341 services [-71.79%])
 Minimizing ids... done.
 Outputting GTFS feed to 'cz_PID.gtfs.zip'... done.
 Parsing GTFS feed in 'cz_PMDP.gtfs.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Removing trips travelling too fast...done. (-0 trips [-0.00%])
 Removing unreferenced entries... done. (-0 trips [-0.00%], -0 stops [-0.00%], -0 shapes [-0.00%], -0 services [-0.00%], -1 routes [-1.72%], -0 agencies [-0.00%], -0 transfers [-0.00%])
-Reclustering stops... done. (-279 clusters) [-39.08%]
+Reclustering stops... done. (-285 clusters) [-39.92%]
 Removing service duplicates... done. (-9 services [-16.67%])
 Minimizing ids... done.
 Outputting GTFS feed to 'cz_PMDP.gtfs.zip'... done.
@@ -64,15 +64,15 @@ Parsing GTFS feed in 'cz_PID.gtfs.zip' ... done. (0 trips [0.00%], 0 stop times 
 Parsing GTFS feed in 'cz_PMDP.gtfs.zip' ... done. (0 trips [0.00%], 0 stop times [0.00%], 0 stops [0.00%], 0 shapes [0.00%], 0 services [0.00%], 0 routes [0.00%], 0 agencies [0.00%], 0 transfers [0.00%], 0 pathways [0.00%], 0 levels [0.00%], 0 fare attributes [0.00%], 0 translations [0.00%] dropped due to errors.)
 Removing unreferenced entries... done. (-0 trips [-0.00%], -0 stops [-0.00%], -0 shapes [-0.00%], -0 services [-0.00%], -0 routes [-0.00%], -0 agencies [-0.00%], -0 transfers [-0.00%])
 Removing redundant agencies... done. (-70 agencies [-22.73%])
-Adding parent stations to all stops... done. (+31100 stations)
-Removing redundant stops... done. (-1903 stops [-1.87%])
-Reclustering stops... done. (-3781 clusters) [-8.89%]
+Adding parent stations to all stops... done. (+31105 stations)
+Removing redundant stops... done. (-1900 stops [-1.87%])
+Reclustering stops... done. (-3782 clusters) [-8.89%]
 Removing redundant routes... done. (-9317 routes [-36.17%])
 Removing service duplicates... done. (-240 services [-10.69%])
 Minimizing services... done. (-110135 calendar_dates.txt entries [-84.13%], +986 calendar.txt entries [+105.79%])
-Removing redundant trips... done. (-14527 trips [-5.02%])
-Removing unreferenced entries... done. (-0 trips [-0.00%], -167 stops [-0.17%], -0 shapes [-0.00%], -444 services [-3.76%], -161 routes [-0.98%], -0 agencies [-0.00%], -45 transfers [-0.07%])
-Removing service duplicates... done. (-9356 services [-82.24%])
-Minimizing services... done. (-4418 calendar_dates.txt entries [-15.99%], +0 calendar.txt entries [+0.00%])
+Removing redundant trips... done. (-14267 trips [-4.93%])
+Removing unreferenced entries... done. (-0 trips [-0.00%], -149 stops [-0.16%], -0 shapes [-0.00%], -361 services [-3.03%], -142 routes [-0.86%], -0 agencies [-0.00%], -35 transfers [-0.05%])
+Removing service duplicates... done. (-9532 services [-82.49%])
+Minimizing services... done. (-4617 calendar_dates.txt entries [-16.59%], +0 calendar.txt entries [+0.00%])
 Encoding stop_ids via parent_station ids ... done.
 Outputting GTFS feed to 'gtfs_czech_clean.zip'... done.
